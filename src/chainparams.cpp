@@ -190,7 +190,7 @@ public:
         nMinColdStakingAmount = 1 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 100;
+        nLastPOWBlock = 500;
         nResPubliqaBadBlockTime = 4070908800; // Skip nBit validation of Block 259201 per PR #915
         nResPubliqaBadBlocknBits = 0x00; // Skip nBit validation of Block 259201 per PR #915
         nModifierUpdateBlock = 495;

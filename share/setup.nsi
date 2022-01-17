@@ -9,11 +9,11 @@ SetCompressor /SOLID lzma
 !define URL https://www.respubliqa.org
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/user/worked/ResPubliqa/share/pixmaps/respubliqa.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/user/worked/ResPubliqa/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/user/worked/22/ResPubliqa/share/pixmaps/respubliqa.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/user/worked/22/ResPubliqa/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/user/worked/ResPubliqa/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/user/worked/22/ResPubliqa/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -21,7 +21,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "ResPubliqa Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\respubliqa-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/user/worked/ResPubliqa/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/user/worked/22/ResPubliqa/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -47,7 +47,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/user/worked/ResPubliqa/respubliqa-0.9.0-win-setup.exe
+OutFile /home/user/worked/22/ResPubliqa/respubliqa-0.9.0-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\ResPubliqa
 !else
@@ -72,14 +72,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/user/worked/ResPubliqa/release/respubliqa-qt
-    File /oname=COPYING.txt /home/user/worked/ResPubliqa/COPYING
-    File /oname=readme.txt /home/user/worked/ResPubliqa/doc/README_windows.txt
+    File /home/user/worked/22/ResPubliqa/release/respubliqa-qt
+    File /oname=COPYING.txt /home/user/worked/22/ResPubliqa/COPYING
+    File /oname=readme.txt /home/user/worked/22/ResPubliqa/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/user/worked/ResPubliqa/release/respubliqad
-    File /home/user/worked/ResPubliqa/release/respubliqa-cli
+    File /home/user/worked/22/ResPubliqa/release/respubliqad
+    File /home/user/worked/22/ResPubliqa/release/respubliqa-cli
     SetOutPath $INSTDIR\doc
-    File /r /home/user/worked/ResPubliqa/doc\*.*
+    File /r /home/user/worked/22/ResPubliqa/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
