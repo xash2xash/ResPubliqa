@@ -1,0 +1,4 @@
+qt/libbitcoinqt_a-qrc_respubliqa.o: qt/qrc_respubliqa.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

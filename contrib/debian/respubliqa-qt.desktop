@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=ResPubliqa Core
+Comment=ResPubliqa P2P Cryptocurrency
+Exec=respubliqa-qt %u
+Terminal=false
+Type=Application
+Icon=respubliqa128
+MimeType=x-scheme-handler/respubliqa;
+Categories=Office;Finance;
+StartupWMClass=ResPubliqa-qt
+Name[en_US]=respubliqa-qt.desktop

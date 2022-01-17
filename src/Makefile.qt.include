@@ -1,0 +1,860 @@
+# Copyright (c) 2013-2016 The Bitcoin Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+bin_PROGRAMS += qt/respubliqa-qt
+EXTRA_LIBRARIES += qt/libbitcoinqt.a
+
+# respubliqa qt core #
+QT_TS = \
+  qt/locale/respubliqa_bg.ts \
+  qt/locale/respubliqa_ca.ts \
+  qt/locale/respubliqa_cs.ts \
+  qt/locale/respubliqa_da.ts \
+  qt/locale/respubliqa_de.ts \
+  qt/locale/respubliqa_en.ts \
+  qt/locale/respubliqa_en_GB.ts \
+  qt/locale/respubliqa_en_US.ts \
+  qt/locale/respubliqa_eo.ts \
+  qt/locale/respubliqa_es.ts \
+  qt/locale/respubliqa_es_ES.ts \
+  qt/locale/respubliqa_fi.ts \
+  qt/locale/respubliqa_fr_FR.ts \
+  qt/locale/respubliqa_hi_IN.ts \
+  qt/locale/respubliqa_hr.ts \
+  qt/locale/respubliqa_hr_HR.ts \
+  qt/locale/respubliqa_it.ts \
+  qt/locale/respubliqa_ja.ts \
+  qt/locale/respubliqa_ko_KR.ts \
+  qt/locale/respubliqa_lt_LT.ts \
+  qt/locale/respubliqa_nl.ts \
+  qt/locale/respubliqa_pl.ts \
+  qt/locale/respubliqa_pt.ts \
+  qt/locale/respubliqa_pt_BR.ts \
+  qt/locale/respubliqa_ro_RO.ts \
+  qt/locale/respubliqa_ru.ts \
+  qt/locale/respubliqa_sk.ts \
+  qt/locale/respubliqa_sv.ts \
+  qt/locale/respubliqa_tr.ts \
+  qt/locale/respubliqa_uk.ts \
+  qt/locale/respubliqa_vi.ts \
+  qt/locale/respubliqa_zh_CN.ts \
+  qt/locale/respubliqa_zh_TW.ts
+
+QT_FORMS_UI = \
+  qt/forms/addressbookpage.ui \
+  qt/forms/askpassphrasedialog.ui \
+  qt/forms/coincontroldialog.ui \
+  qt/forms/blockexplorer.ui \
+  qt/forms/editaddressdialog.ui \
+  qt/forms/governancepage.ui \
+  qt/forms/helpmessagedialog.ui \
+  qt/forms/intro.ui \
+  qt/forms/openuridialog.ui \
+  qt/forms/optionsdialog.ui \
+  qt/forms/rpcconsole.ui \
+  qt/respubliqa/forms/loadingdialog.ui \
+  qt/forms/zpivcontroldialog.ui \
+  qt/respubliqa/forms/snackbar.ui \
+  qt/respubliqa/forms/navmenuwidget.ui \
+  qt/respubliqa/forms/lockunlock.ui \
+  qt/respubliqa/forms/expandablebutton.ui \
+  qt/respubliqa/forms/receivedialog.ui \
+  qt/respubliqa/forms/walletpassworddialog.ui \
+  qt/respubliqa/forms/topbar.ui \
+  qt/respubliqa/forms/txrow.ui \
+  qt/respubliqa/forms/dashboardwidget.ui \
+  qt/respubliqa/forms/coincontrolpivwidget.ui \
+  qt/respubliqa/forms/addresslabelrow.ui \
+  qt/respubliqa/forms/contactdropdownrow.ui \
+  qt/respubliqa/forms/mninfodialog.ui \
+  qt/respubliqa/forms/optionbutton.ui \
+  qt/respubliqa/forms/masternodewizarddialog.ui \
+  qt/respubliqa/forms/mnrow.ui \
+  qt/respubliqa/forms/masternodeswidget.ui \
+  qt/respubliqa/forms/myaddressrow.ui \
+  qt/respubliqa/forms/csrow.ui \
+  qt/respubliqa/forms/sendchangeaddressdialog.ui \
+  qt/respubliqa/forms/sendconfirmdialog.ui \
+  qt/respubliqa/forms/sendcustomfeedialog.ui \
+  qt/respubliqa/forms/sendchangeaddressdialog.ui \
+  qt/respubliqa/forms/sendmultirow.ui \
+  qt/respubliqa/forms/send.ui \
+  qt/respubliqa/forms/addnewaddressdialog.ui \
+  qt/respubliqa/forms/addnewcontactdialog.ui \
+  qt/respubliqa/forms/requestdialog.ui \
+  qt/respubliqa/forms/receivewidget.ui \
+  qt/respubliqa/forms/tooltipmenu.ui \
+  qt/respubliqa/forms/addresseswidget.ui \
+  qt/respubliqa/forms/defaultdialog.ui \
+  qt/respubliqa/forms/denomgenerationdialog.ui \
+  qt/respubliqa/forms/privacywidget.ui \
+  qt/respubliqa/forms/coldstakingwidget.ui \
+  qt/respubliqa/settings/forms/settingsbackupwallet.ui \
+  qt/respubliqa/settings/forms/settingsbittoolwidget.ui \
+  qt/respubliqa/settings/forms/settingsconsolewidget.ui \
+  qt/respubliqa/settings/forms/settingsdisplayoptionswidget.ui \
+  qt/respubliqa/settings/forms/settingsfaqwidget.ui \
+  qt/respubliqa/settings/forms/settingsinformationwidget.ui \
+  qt/respubliqa/settings/forms/settingsmainoptionswidget.ui \
+  qt/respubliqa/settings/forms/settingsmultisenddialog.ui \
+  qt/respubliqa/settings/forms/settingsmultisendwidget.ui \
+  qt/respubliqa/settings/forms/settingssignmessagewidgets.ui \
+  qt/respubliqa/settings/forms/settingswalletoptionswidget.ui \
+  qt/respubliqa/settings/forms/settingswalletrepairwidget.ui \
+  qt/respubliqa/settings/forms/settingswidget.ui \
+  qt/respubliqa/forms/welcomecontentwidget.ui \
+  qt/respubliqa/forms/splash.ui
+
+QT_MOC_CPP = \
+  qt/moc_addressbookpage.cpp \
+  qt/moc_addresstablemodel.cpp \
+  qt/moc_askpassphrasedialog.cpp \
+  qt/moc_bantablemodel.cpp \
+  qt/moc_bitcoinaddressvalidator.cpp \
+  qt/moc_bitcoinamountfield.cpp \
+  qt/respubliqa/moc_respubliqagui.cpp \
+  qt/moc_bitcoinunits.cpp \
+  qt/moc_blockexplorer.cpp \
+  qt/moc_clientmodel.cpp \
+  qt/moc_coincontroldialog.cpp \
+  qt/moc_coincontroltreewidget.cpp \
+  qt/moc_csvmodelwriter.cpp \
+  qt/moc_editaddressdialog.cpp \
+  qt/moc_governancepage.cpp \
+  qt/moc_guiutil.cpp \
+  qt/moc_intro.cpp \
+  qt/moc_macdockiconhandler.cpp \
+  qt/moc_macnotificationhandler.cpp \
+  qt/moc_notificator.cpp \
+  qt/moc_openuridialog.cpp \
+  qt/moc_optionsdialog.cpp \
+  qt/moc_optionsmodel.cpp \
+  qt/moc_peertablemodel.cpp \
+  qt/moc_paymentserver.cpp \
+  qt/moc_qvalidatedlineedit.cpp \
+  qt/moc_qvaluecombobox.cpp \
+  qt/moc_proposalframe.cpp \
+  qt/moc_recentrequeststablemodel.cpp \
+  qt/moc_rpcconsole.cpp \
+  qt/moc_splashscreen.cpp \
+  qt/moc_trafficgraphwidget.cpp \
+  qt/moc_transactiondesc.cpp \
+  qt/moc_transactionfilterproxy.cpp \
+  qt/moc_transactiontablemodel.cpp \
+  qt/moc_utilitydialog.cpp \
+  qt/moc_walletmodel.cpp \
+  qt/respubliqa/moc_loadingdialog.cpp \
+  qt/moc_zpivcontroldialog.cpp \
+  qt/respubliqa/moc_pwidget.cpp \
+  qt/respubliqa/moc_snackbar.cpp \
+  qt/respubliqa/moc_navmenuwidget.cpp \
+  qt/respubliqa/moc_lockunlock.cpp \
+  qt/respubliqa/moc_expandablebutton.cpp \
+  qt/respubliqa/moc_furabstractlistitemdelegate.cpp \
+  qt/respubliqa/moc_receivedialog.cpp \
+  qt/respubliqa/moc_walletpassworddialog.cpp \
+  qt/respubliqa/moc_pfborderimage.cpp \
+  qt/respubliqa/moc_topbar.cpp \
+  qt/respubliqa/moc_txrow.cpp \
+  qt/respubliqa/moc_dashboardwidget.cpp \
+  qt/respubliqa/moc_coincontrolpivwidget.cpp \
+  qt/respubliqa/moc_addresslabelrow.cpp \
+  qt/respubliqa/moc_contactdropdownrow.cpp \
+  qt/respubliqa/moc_mninfodialog.cpp \
+  qt/respubliqa/moc_optionbutton.cpp \
+  qt/respubliqa/moc_coldstakingmodel.cpp \
+  qt/respubliqa/moc_mnmodel.cpp \
+  qt/respubliqa/moc_masternodewizarddialog.cpp \
+  qt/respubliqa/moc_mnrow.cpp \
+  qt/respubliqa/moc_masternodeswidget.cpp \
+  qt/respubliqa/moc_myaddressrow.cpp \
+  qt/respubliqa/moc_csrow.cpp \
+  qt/respubliqa/moc_contactsdropdown.cpp \
+  qt/respubliqa/moc_sendchangeaddressdialog.cpp \
+  qt/respubliqa/moc_sendconfirmdialog.cpp \
+  qt/respubliqa/moc_sendcustomfeedialog.cpp \
+  qt/respubliqa/moc_sendchangeaddressdialog.cpp \
+  qt/respubliqa/moc_sendmultirow.cpp \
+  qt/respubliqa/moc_send.cpp \
+  qt/respubliqa/moc_addnewaddressdialog.cpp \
+  qt/respubliqa/moc_addnewcontactdialog.cpp \
+  qt/respubliqa/moc_requestdialog.cpp \
+  qt/respubliqa/moc_receivewidget.cpp \
+  qt/respubliqa/moc_tooltipmenu.cpp \
+  qt/respubliqa/moc_addresseswidget.cpp \
+  qt/respubliqa/moc_defaultdialog.cpp \
+  qt/respubliqa/moc_denomgenerationdialog.cpp \
+  qt/respubliqa/moc_privacywidget.cpp \
+  qt/respubliqa/moc_coldstakingwidget.cpp \
+  qt/respubliqa/settings/moc_settingsbackupwallet.cpp \
+  qt/respubliqa/settings/moc_settingsbittoolwidget.cpp \
+  qt/respubliqa/settings/moc_settingsconsolewidget.cpp \
+  qt/respubliqa/settings/moc_settingsdisplayoptionswidget.cpp \
+  qt/respubliqa/settings/moc_settingsfaqwidget.cpp \
+  qt/respubliqa/settings/moc_settingsinformationwidget.cpp \
+  qt/respubliqa/settings/moc_settingsmainoptionswidget.cpp \
+  qt/respubliqa/settings/moc_settingsmultisenddialog.cpp \
+  qt/respubliqa/settings/moc_settingsmultisendwidget.cpp \
+  qt/respubliqa/settings/moc_settingssignmessagewidgets.cpp \
+  qt/respubliqa/settings/moc_settingswalletoptionswidget.cpp \
+  qt/respubliqa/settings/moc_settingswalletrepairwidget.cpp \
+  qt/respubliqa/settings/moc_settingswidget.cpp \
+  qt/respubliqa/moc_welcomecontentwidget.cpp \
+  qt/respubliqa/moc_splash.cpp
+
+BITCOIN_MM = \
+  qt/macdockiconhandler.mm \
+  qt/macnotificationhandler.mm
+
+QT_MOC = \
+  qt/respubliqa.moc \
+  qt/bitcoinamountfield.moc \
+  qt/intro.moc \
+  qt/rpcconsole.moc \
+  qt/respubliqa/settings/moc_settingsconsolewidget.cpp
+
+QT_QRC_CPP = qt/qrc_respubliqa.cpp
+QT_QRC = qt/respubliqa.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_respubliqa_locale.cpp
+QT_QRC_LOCALE = qt/respubliqa_locale.qrc
+
+PROTOBUF_CC = qt/paymentrequest.pb.cc
+PROTOBUF_H = qt/paymentrequest.pb.h
+PROTOBUF_PROTO = qt/paymentrequest.proto
+
+BITCOIN_QT_H = \
+  qt/addressbookpage.h \
+  qt/addresstablemodel.h \
+  qt/askpassphrasedialog.h \
+  qt/bantablemodel.h \
+  qt/bitcoinaddressvalidator.h \
+  qt/bitcoinamountfield.h \
+  qt/respubliqa/respubliqagui.h \
+  qt/bitcoinunits.h \
+  qt/blockexplorer.h \
+  qt/clientmodel.h \
+  qt/coincontroldialog.h \
+  qt/coincontroltreewidget.h \
+  qt/csvmodelwriter.h \
+  qt/editaddressdialog.h \
+  qt/governancepage.h \
+  qt/guiconstants.h \
+  qt/guiutil.h \
+  qt/intro.h \
+  qt/macdockiconhandler.h \
+  qt/macnotificationhandler.h \
+  qt/networkstyle.h \
+  qt/notificator.h \
+  qt/openuridialog.h \
+  qt/optionsdialog.h \
+  qt/optionsmodel.h \
+  qt/paymentrequestplus.h \
+  qt/paymentserver.h \
+  qt/peertablemodel.h \
+  qt/platformstyle.h \
+  qt/proposalframe.h \
+  qt/qvalidatedlineedit.h \
+  qt/qvaluecombobox.h \
+  qt/recentrequeststablemodel.h \
+  qt/rpcconsole.h \
+  qt/splashscreen.h \
+  qt/trafficgraphwidget.h \
+  qt/transactiondesc.h \
+  qt/transactionfilterproxy.h \
+  qt/transactionrecord.h \
+  qt/transactiontablemodel.h \
+  qt/utilitydialog.h \
+  qt/walletmodel.h \
+  qt/walletmodeltransaction.h \
+  qt/respubliqa/prunnable.h \
+  qt/respubliqa/pfborderimage.h \
+  qt/respubliqa/loadingdialog.h \
+  qt/winshutdownmonitor.h \
+  qt/zpivcontroldialog.h \
+  qt/respubliqa/pwidget.h \
+  qt/respubliqa/guitransactionsutils.h \
+  qt/respubliqa/snackbar.h \
+  qt/respubliqa/navmenuwidget.h \
+  qt/respubliqa/lockunlock.h \
+  qt/respubliqa/receivedialog.h \
+  qt/respubliqa/furlistrow.h \
+  qt/respubliqa/furabstractlistitemdelegate.h \
+  qt/respubliqa/txviewholder.h \
+  qt/respubliqa/qtutils.h \
+  qt/respubliqa/expandablebutton.h \
+  qt/respubliqa/walletpassworddialog.h \
+  qt/respubliqa/topbar.h \
+  qt/respubliqa/txrow.h \
+  qt/respubliqa/addressholder.h \
+  qt/respubliqa/addressfilterproxymodel.h \
+  qt/respubliqa/dashboardwidget.h \
+  qt/respubliqa/coincontrolpivwidget.h \
+  qt/respubliqa/addresslabelrow.h \
+  qt/respubliqa/contactdropdownrow.h \
+  qt/respubliqa/mninfodialog.h \
+  qt/respubliqa/optionbutton.h \
+  qt/respubliqa/coldstakingmodel.h \
+  qt/respubliqa/mnmodel.h \
+  qt/respubliqa/masternodewizarddialog.h \
+  qt/respubliqa/mnrow.h \
+  qt/respubliqa/masternodeswidget.h \
+  qt/respubliqa/myaddressrow.h \
+  qt/respubliqa/csrow.h \
+  qt/respubliqa/contactsdropdown.h \
+  qt/respubliqa/sendchangeaddressdialog.h \
+  qt/respubliqa/sendconfirmdialog.h \
+  qt/respubliqa/sendcustomfeedialog.h \
+  qt/respubliqa/sendchangeaddressdialog.h \
+  qt/respubliqa/sendmultirow.h \
+  qt/respubliqa/send.h \
+  qt/respubliqa/addnewaddressdialog.h \
+  qt/respubliqa/addnewcontactdialog.h \
+  qt/respubliqa/requestdialog.h \
+  qt/respubliqa/receivewidget.h \
+  qt/respubliqa/tooltipmenu.h \
+  qt/respubliqa/addresseswidget.h \
+  qt/respubliqa/defaultdialog.h \
+  qt/respubliqa/denomgenerationdialog.h \
+  qt/respubliqa/privacywidget.h \
+  qt/respubliqa/coldstakingwidget.h \
+  qt/respubliqa/settings/settingsbackupwallet.h \
+  qt/respubliqa/settings/settingsbittoolwidget.h \
+  qt/respubliqa/settings/settingsconsolewidget.h \
+  qt/respubliqa/settings/settingsdisplayoptionswidget.h \
+  qt/respubliqa/settings/settingsfaqwidget.h \
+  qt/respubliqa/settings/settingsinformationwidget.h \
+  qt/respubliqa/settings/settingsmainoptionswidget.h \
+  qt/respubliqa/settings/settingsmultisenddialog.h \
+  qt/respubliqa/settings/settingsmultisendwidget.h \
+  qt/respubliqa/settings/settingssignmessagewidgets.h \
+  qt/respubliqa/settings/settingswalletoptionswidget.h \
+  qt/respubliqa/settings/settingswalletrepairwidget.h \
+  qt/respubliqa/settings/settingswidget.h \
+  qt/respubliqa/welcomecontentwidget.h \
+  qt/respubliqa/splash.h
+
+RES_ICONS = \
+  qt/res/icons/add.png \
+  qt/res/icons/address-book.png \
+  qt/res/icons/automint_active.png \
+  qt/res/icons/automint_inactive.png \
+  qt/res/icons/bitcoin.ico \
+  qt/res/icons/bitcoin.png \
+  qt/res/icons/bitcoin_testnet.ico \
+  qt/res/icons/bitcoin_testnet.png \
+  qt/res/icons/bitcoin_regtest.png \
+  qt/res/icons/browse.png \
+  qt/res/icons/clock1.png \
+  qt/res/icons/clock2.png \
+  qt/res/icons/clock3.png \
+  qt/res/icons/clock4.png \
+  qt/res/icons/clock5.png \
+  qt/res/icons/configure.png \
+  qt/res/icons/connect0_16.png \
+  qt/res/icons/connect1_16.png \
+  qt/res/icons/connect2_16.png \
+  qt/res/icons/connect3_16.png \
+  qt/res/icons/connect4_16.png \
+  qt/res/icons/debugwindow.png \
+  qt/res/icons/edit.png \
+  qt/res/icons/editcopy.png \
+  qt/res/icons/editpaste.png \
+  qt/res/icons/explorer.png \
+  qt/res/icons/export.png \
+  qt/res/icons/eye.png \
+  qt/res/icons/eye_minus.png \
+  qt/res/icons/eye_plus.png \
+  qt/res/icons/filesave.png \
+  qt/res/icons/history.png \
+  qt/res/icons/key.png \
+  qt/res/icons/lock_closed.png \
+  qt/res/icons/lock_open.png \
+  qt/res/icons/masternodes.png \
+  qt/res/icons/onion.png \
+  qt/res/icons/overview.png \
+  qt/res/icons/qrcode.png \
+  qt/res/icons/quit.png \
+  qt/res/icons/receive.png \
+  qt/res/icons/receive_dark.png \
+  qt/res/icons/privacy.png \
+  qt/res/icons/remove.png \
+  qt/res/icons/send.png \
+  qt/res/icons/send_dark.png \
+  qt/res/icons/governance.png \
+  qt/res/icons/governance_dark.png \
+  qt/res/icons/staking_active.png \
+  qt/res/icons/staking_inactive.png \
+  qt/res/icons/synced.png \
+  qt/res/icons/trade.png \
+  qt/res/icons/transaction0.png \
+  qt/res/icons/transaction2.png \
+  qt/res/icons/transaction_conflicted.png \
+  qt/res/icons/tx_inout.png \
+  qt/res/icons/tx_input.png \
+  qt/res/icons/tx_output.png \
+  qt/res/icons/tx_mined.png \
+  qt/res/icons/ic-transaction-received.svg \
+  qt/res/icons/ic-transaction-mint.svg \
+  qt/res/icons/ic-transaction-sent.svg \
+  qt/res/icons/ic-transaction-staked.svg \
+  qt/res/icons/unit_respubliqa.png \
+  qt/res/icons/unit_mrespubliqa.png \
+  qt/res/icons/unit_urespubliqa.png \
+  qt/res/icons/unit_trespubliqa.png \
+  qt/res/icons/unit_tmrespubliqa.png \
+  qt/res/icons/unit_turespubliqa.png \
+  qt/res/icons/yesvote.png \
+  qt/res/icons/novote.png \
+  qt/res/icons/abstainvote.png \
+  qt/respubliqa/res/img/bg-dashboard-banner.png \
+  qt/respubliqa/res/img/bg-multi-number-dark.svg \
+  qt/respubliqa/res/img/ic-check-locked.svg \
+  qt/respubliqa/res/img/ic-nav-address.svg \
+  qt/respubliqa/res/img/ic-update.svg \
+  qt/respubliqa/res/img/bg-multi-number.svg \
+  qt/respubliqa/res/img/ic-check-mint-off.svg \
+  qt/respubliqa/res/img/ic-nav-cold-staking.svg \
+  qt/respubliqa/res/img/ic-nav-cold-staking-active.svg \
+  qt/respubliqa/res/img/ic-nav-dashboard-active.svg \
+  qt/respubliqa/res/img/ic-wallet-status-locked.svg \
+  qt/respubliqa/res/img/bg-splash.svg \
+  qt/respubliqa/res/img/bg-splash.png \
+  qt/respubliqa/res/img/ic-check-mint.svg \
+  qt/respubliqa/res/img/ic-nav-dashboard-hover.svg \
+  qt/respubliqa/res/img/ic-wallet-status-staking.svg \
+  qt/respubliqa/res/img/ic-check-peers-off.svg \
+  qt/respubliqa/res/img/ic-nav-dashboard.svg \
+  qt/respubliqa/res/img/ic-wallet-status-unlocked.svg \
+  qt/respubliqa/res/img/ic-check-peers.svg \
+  qt/respubliqa/res/img/ic-nav-master-active.svg \
+  qt/respubliqa/res/img/ic-watch-password-white.svg \
+  qt/respubliqa/res/img/bg-welcome-container.jpg \
+  qt/respubliqa/res/img/bg-welcome-container.png \
+  qt/respubliqa/res/img/bg-welcome-container.svg \
+  qt/respubliqa/res/img/bg-welcome-container@2x.png \
+  qt/respubliqa/res/img/bg-welcome-container@3x.png \
+  qt/respubliqa/res/img/ic-check-staking-off.svg \
+  qt/respubliqa/res/img/ic-nav-master-hover.svg \
+  qt/respubliqa/res/img/ic-watch-password.svg \
+  qt/respubliqa/res/img/bg-welcome.jpg \
+  qt/respubliqa/res/img/bg-welcome.svg \
+  qt/respubliqa/res/img/bg-welcome@2x.jpg \
+  qt/respubliqa/res/img/bg-welcome@3x.jpg \
+  qt/respubliqa/res/img/bg-welcome.png \
+  qt/respubliqa/res/img/ic-check-staking.svg \
+  qt/respubliqa/res/img/ic-nav-master.svg \
+  qt/respubliqa/res/img/img-dashboard-banner.jpg \
+  qt/respubliqa/res/img/btn-radio-active.svg \
+  qt/respubliqa/res/img/ic-check-sync-off.svg \
+  qt/respubliqa/res/img/ic-nav-privacy-active.svg \
+  qt/respubliqa/res/img/img-empty-contacts.svg \
+  qt/respubliqa/res/img/btn-radio-off.svg \
+  qt/respubliqa/res/img/ic-check-sync.png \
+  qt/respubliqa/res/img/ic-nav-privacy-hover.svg \
+  qt/respubliqa/res/img/img-empty-dark-contacts.svg \
+  qt/respubliqa/res/img/ic-contact-arrow-down.svg \
+  qt/respubliqa/res/img/ic-contact-arrow-down-white.svg \
+  qt/respubliqa/res/img/ic-check-sync.svg \
+  qt/respubliqa/res/img/ic-check-faq.svg \
+  qt/respubliqa/res/img/ic-nav-privacy.svg \
+  qt/respubliqa/res/img/img-empty-dark-error.svg \
+  qt/respubliqa/res/img/ic-add-label.svg \
+  qt/respubliqa/res/img/ic-pending.svg \
+  qt/respubliqa/res/img/ic-check-theme-dark.svg \
+  qt/respubliqa/res/img/ic-nav-receive-active.svg \
+  qt/respubliqa/res/img/img-empty-dark-masternode.svg \
+  qt/respubliqa/res/img/ic-add-liliac.svg \
+  qt/respubliqa/res/img/ic-check-theme-light.svg \
+  qt/respubliqa/res/img/ic-nav-receive-hover.svg \
+  qt/respubliqa/res/img/img-empty-dark-multisend.svg \
+  qt/respubliqa/res/img/ic-add-purple.svg \
+  qt/respubliqa/res/img/ic-check-white.svg \
+  qt/respubliqa/res/img/ic-nav-receive.svg \
+  qt/respubliqa/res/img/img-empty-dark-peers.svg \
+  qt/respubliqa/res/img/ic-add.svg \
+  qt/respubliqa/res/img/ic-check.svg \
+  qt/respubliqa/res/img/ic-nav-send-active.svg \
+  qt/respubliqa/res/img/img-empty-dark-staking-off.svg \
+  qt/respubliqa/res/img/img-empty-dark-staking-on.svg \
+  qt/respubliqa/res/img/ic-address-book-grey.svg \
+  qt/respubliqa/res/img/ic-chevron-left.svg \
+  qt/respubliqa/res/img/ic-nav-send-hover.svg \
+  qt/respubliqa/res/img/img-empty-dark-transactions.svg \
+  qt/respubliqa/res/img/ic-address-book-white.svg \
+  qt/respubliqa/res/img/ic-chevron-right.svg \
+  qt/respubliqa/res/img/ic-nav-send.svg \
+  qt/respubliqa/res/img/img-empty-error.svg \
+  qt/respubliqa/res/img/ic-address-book.svg \
+  qt/respubliqa/res/img/ic-clear-liliac.svg \
+  qt/respubliqa/res/img/ic-nav-settings-active.svg \
+  qt/respubliqa/res/img/img-empty-masternode.svg \
+  qt/respubliqa/res/img/ic-address-send-white.svg \
+  qt/respubliqa/res/img/ic-clear-purple.svg \
+  qt/respubliqa/res/img/ic-nav-settings-hover.svg \
+  qt/respubliqa/res/img/img-empty-multisend.svg \
+  qt/respubliqa/res/img/ic-address-send.svg \
+  qt/respubliqa/res/img/ic-close-white.svg \
+  qt/respubliqa/res/img/ic-nav-settings.svg \
+  qt/respubliqa/res/img/img-empty-peers.svg \
+  qt/respubliqa/res/img/img-empty-privacy.svg \
+  qt/respubliqa/res/img/img-empty-privacy-dark.svg \
+  qt/respubliqa/res/img/ic-arrow-drop-down-white.svg \
+  qt/respubliqa/res/img/ic-close.svg \
+  qt/respubliqa/res/img/ic-radio-liliac-on.svg \
+  qt/respubliqa/res/img/img-empty-staking-off.svg \
+  qt/respubliqa/res/img/ic-arrow-drop-down.svg \
+  qt/respubliqa/res/img/ic-coin-piv.svg \
+  qt/respubliqa/res/img/ic-receive-off.svg \
+  qt/respubliqa/res/img/img-empty-staking-on.svg \
+  qt/respubliqa/res/img/ic-arrow-drop-up-white.svg \
+  qt/respubliqa/res/img/ic-coin-zpiv.png \
+  qt/respubliqa/res/img/ic-receive-on.svg \
+  qt/respubliqa/res/img/img-empty-transactions.svg \
+  qt/respubliqa/res/img/ic-arrow-drop-up.svg \
+  qt/respubliqa/res/img/ic-coin-zpiv.svg \
+  qt/respubliqa/res/img/ic-received.svg \
+  qt/respubliqa/res/img/img-logo-respubliqa.png \
+  qt/respubliqa/res/img/ic-arrow-drop-white-down.svg \
+  qt/respubliqa/res/img/ic-combo-box.svg \
+  qt/respubliqa/res/img/ic-send.svg \
+  qt/respubliqa/res/img/img-logo-respubliqa@2x.png \
+  qt/respubliqa/res/img/ic-arrow-purple-down.svg \
+  qt/respubliqa/res/img/ic-connect.svg \
+  qt/respubliqa/res/img/ic-submenu-lock.svg \
+  qt/respubliqa/res/img/img-logo-respubliqa@3x.png \
+  qt/respubliqa/res/img/img-logo-respubliqa.svg \
+  qt/respubliqa/res/img/ic-arrow-right-white.svg \
+  qt/respubliqa/res/img/ic-arrow-left-white.svg \
+  qt/respubliqa/res/img/ic-arrow-left.svg \
+  qt/respubliqa/res/img/ic-copy-liliac.svg \
+  qt/respubliqa/res/img/ic-submenu-staking.svg \
+  qt/respubliqa/res/img/img-nav-logo-respubliqa.png \
+  qt/respubliqa/res/img/ic-arrow-right.svg \
+  qt/respubliqa/res/img/ic-copy.svg \
+  qt/respubliqa/res/img/ic-copy-big.svg \
+  qt/respubliqa/res/img/ic-copy-big-white.svg \
+  qt/respubliqa/res/img/ic-submenu-unlock.svg \
+  qt/respubliqa/res/img/img-nav-logo.png \
+  qt/respubliqa/res/img/ic-arrow-white-left.svg \
+  qt/respubliqa/res/img/ic-exit.svg \
+  qt/respubliqa/res/img/ic-switch-liliac-on.svg \
+  qt/respubliqa/res/img/img-nav-logo.svg \
+  qt/respubliqa/res/img/ic-arrow-white-right.svg \
+  qt/respubliqa/res/img/ic-expand.svg \
+  qt/respubliqa/res/img/ic-switch-off.svg \
+  qt/respubliqa/res/img/img-qr-test-big.png \
+  qt/respubliqa/res/img/ic-check-active.svg \
+  qt/respubliqa/res/img/ic-folder.svg \
+  qt/respubliqa/res/img/ic-switch-on.svg \
+  qt/respubliqa/res/img/img-qr-test.png \
+  qt/respubliqa/res/img/ic-check-box.svg \
+  qt/respubliqa/res/img/ic-check-box-dark-active.svg \
+  qt/respubliqa/res/img/ic-check-box-indeterminate.svg \
+  qt/respubliqa/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/respubliqa/res/img/ic-label-liliac.svg \
+  qt/respubliqa/res/img/ic-transaction-warning.svg \
+  qt/respubliqa/res/img/ic-transaction-mint.svg \
+  qt/respubliqa/res/img/ic-transaction-mint-inactive.svg \
+  qt/respubliqa/res/img/ic-check-cold-staking.svg \
+  qt/respubliqa/res/img/ic-check-cold-staking-off.svg \
+  qt/respubliqa/res/img/ic-check-cold-staking-enabled.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-cs-contract.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-cs-contract-inactive.svg \
+  qt/respubliqa/res/img/img-qr.svg \
+  qt/respubliqa/res/img/ic-check-connect-off.svg \
+  qt/respubliqa/res/img/ic-label.svg \
+  qt/respubliqa/res/img/ic-transaction-received.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-received.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-warning.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-mint.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-mint-inactive.svg \
+  qt/respubliqa/res/img/ic-transaction-received-inactive.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-received-inactive.svg \
+  qt/respubliqa/res/img/img-welcome-step1.png \
+  qt/respubliqa/res/img/ic-check-connect.svg \
+  qt/respubliqa/res/img/ic-menu-hover.svg \
+  qt/respubliqa/res/img/ic-transaction-sent.svg \
+  qt/respubliqa/res/img/ic-transaction-sent-inactive.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-sent.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-sent-inactive.svg \
+  qt/respubliqa/res/img/img-welcome-step2.png \
+  qt/respubliqa/res/img/ic-check-dark.svg \
+  qt/respubliqa/res/img/ic-mint.svg \
+  qt/respubliqa/res/img/ic-transaction-staked.svg \
+  qt/respubliqa/res/img/ic-transaction-staked-inactive.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-staked.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-staked-inactive.svg \
+  qt/respubliqa/res/img/img-welcome-step3.png \
+  qt/respubliqa/res/img/ic-check-liliac-on.svg \
+  qt/respubliqa/res/img/ic-nav-address-active.svg \
+  qt/respubliqa/res/img/ic-unlock-staking.svg \
+  qt/respubliqa/res/img/img-welcome-step4.png \
+  qt/respubliqa/res/img/ic-check-locked-off.svg \
+  qt/respubliqa/res/img/ic-nav-address-hover.svg \
+  qt/respubliqa/res/img/ic-update-liliac.svg \
+  qt/respubliqa/res/img/ic-arrow-drop-down-purple.svg \
+  qt/respubliqa/res/img/ic-arrow-drop-up-purple.svg \
+  qt/respubliqa/res/img/ic-check-liliac-indeterminate.svg \
+  qt/respubliqa/res/img/ic-check-box-liliac-indeterminate.svg \
+  qt/respubliqa/res/img/ic-transaction-stake-delegated.svg \
+  qt/respubliqa/res/img/ic-transaction-stake-delegated-inactive.svg \
+  qt/respubliqa/res/img/ic-transaction-stake-hot.svg \
+  qt/respubliqa/res/img/ic-transaction-stake-hot-inactive.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-stake-hot.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-stake-hot-inactive.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-stake-delegated.svg \
+  qt/respubliqa/res/img/dark/ic-transaction-stake-delegated-inactive.svg \
+  qt/respubliqa/res/img/ic-transaction-cs-contract.svg \
+  qt/respubliqa/res/img/ic-transaction-cs-contract-inactive.svg \
+  qt/respubliqa/res/img/ic-check-box-indeterminate.svg \
+  qt/respubliqa/res/img/ani-loading-dark.gif \
+  qt/respubliqa/res/img/ani-loading.gif
+
+
+
+BITCOIN_QT_BASE_CPP = \
+  qt/bantablemodel.cpp \
+  qt/bitcoinaddressvalidator.cpp \
+  qt/bitcoinamountfield.cpp \
+  qt/respubliqa/respubliqagui.cpp \
+  qt/bitcoinunits.cpp \
+  qt/blockexplorer.cpp \
+  qt/clientmodel.cpp \
+  qt/csvmodelwriter.cpp \
+  qt/guiutil.cpp \
+  qt/intro.cpp \
+  qt/networkstyle.cpp \
+  qt/notificator.cpp \
+  qt/optionsdialog.cpp \
+  qt/optionsmodel.cpp \
+  qt/peertablemodel.cpp \
+  qt/platformstyle.cpp \
+  qt/qvalidatedlineedit.cpp \
+  qt/qvaluecombobox.cpp \
+  qt/rpcconsole.cpp \
+  qt/splashscreen.cpp \
+  qt/trafficgraphwidget.cpp \
+  qt/utilitydialog.cpp
+
+BITCOIN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+
+BITCOIN_QT_WALLET_CPP = \
+  qt/addressbookpage.cpp \
+  qt/addresstablemodel.cpp \
+  qt/askpassphrasedialog.cpp \
+  qt/blockexplorer.cpp \
+  qt/coincontroldialog.cpp \
+  qt/coincontroltreewidget.cpp \
+  qt/editaddressdialog.cpp \
+  qt/governancepage.cpp \
+  qt/openuridialog.cpp \
+  qt/paymentrequestplus.cpp \
+  qt/paymentserver.cpp \
+  qt/proposalframe.cpp \
+  qt/recentrequeststablemodel.cpp \
+  qt/transactiondesc.cpp \
+  qt/transactionfilterproxy.cpp \
+  qt/transactionrecord.cpp \
+  qt/transactiontablemodel.cpp \
+  qt/walletmodel.cpp \
+  qt/walletmodeltransaction.cpp \
+  qt/respubliqa/loadingdialog.cpp \
+  qt/zpivcontroldialog.cpp \
+  qt/respubliqa/pwidget.cpp \
+  qt/respubliqa/guitransactionsutils.cpp \
+  qt/respubliqa/snackbar.cpp \
+  qt/respubliqa/navmenuwidget.cpp \
+  qt/respubliqa/lockunlock.cpp \
+  qt/respubliqa/receivedialog.cpp \
+  qt/respubliqa/furabstractlistitemdelegate.cpp \
+  qt/respubliqa/txviewholder.cpp \
+  qt/respubliqa/qtutils.cpp \
+  qt/respubliqa/expandablebutton.cpp \
+  qt/respubliqa/walletpassworddialog.cpp \
+  qt/respubliqa/topbar.cpp \
+  qt/respubliqa/txrow.cpp \
+  qt/respubliqa/addressholder.cpp \
+  qt/respubliqa/addressfilterproxymodel.cpp \
+  qt/respubliqa/dashboardwidget.cpp \
+  qt/respubliqa/coincontrolpivwidget.cpp \
+  qt/respubliqa/addresslabelrow.cpp \
+  qt/respubliqa/contactdropdownrow.cpp \
+  qt/respubliqa/contactsdropdown.cpp \
+  qt/respubliqa/optionbutton.cpp \
+  qt/respubliqa/mninfodialog.cpp \
+  qt/respubliqa/coldstakingmodel.cpp \
+  qt/respubliqa/mnmodel.cpp \
+  qt/respubliqa/masternodewizarddialog.cpp \
+  qt/respubliqa/mnrow.cpp \
+  qt/respubliqa/masternodeswidget.cpp \
+  qt/respubliqa/myaddressrow.cpp \
+  qt/respubliqa/csrow.cpp \
+  qt/respubliqa/sendchangeaddressdialog.cpp \
+  qt/respubliqa/sendconfirmdialog.cpp \
+  qt/respubliqa/sendcustomfeedialog.cpp \
+  qt/respubliqa/sendchangeaddressdialog.cpp \
+  qt/respubliqa/sendmultirow.cpp \
+  qt/respubliqa/send.cpp \
+  qt/respubliqa/addnewaddressdialog.cpp \
+  qt/respubliqa/addnewcontactdialog.cpp \
+  qt/respubliqa/requestdialog.cpp \
+  qt/respubliqa/receivewidget.cpp \
+  qt/respubliqa/tooltipmenu.cpp \
+  qt/respubliqa/addresseswidget.cpp \
+  qt/respubliqa/defaultdialog.cpp \
+  qt/respubliqa/denomgenerationdialog.cpp \
+  qt/respubliqa/privacywidget.cpp \
+  qt/respubliqa/coldstakingwidget.cpp \
+  qt/respubliqa/settings/settingsbackupwallet.cpp \
+  qt/respubliqa/settings/settingsbittoolwidget.cpp \
+  qt/respubliqa/settings/settingsconsolewidget.cpp \
+  qt/respubliqa/settings/settingsdisplayoptionswidget.cpp \
+  qt/respubliqa/settings/settingsfaqwidget.cpp \
+  qt/respubliqa/settings/settingsinformationwidget.cpp \
+  qt/respubliqa/settings/settingsmainoptionswidget.cpp \
+  qt/respubliqa/settings/settingsmultisenddialog.cpp \
+  qt/respubliqa/settings/settingsmultisendwidget.cpp \
+  qt/respubliqa/settings/settingssignmessagewidgets.cpp \
+  qt/respubliqa/settings/settingswalletoptionswidget.cpp \
+  qt/respubliqa/settings/settingswalletrepairwidget.cpp \
+  qt/respubliqa/settings/settingswidget.cpp \
+  qt/respubliqa/welcomecontentwidget.cpp \
+  qt/respubliqa/splash.cpp
+
+
+BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
+if TARGET_WINDOWS
+BITCOIN_QT_CPP += $(BITCOIN_QT_WINDOWS_CPP)
+endif
+if ENABLE_WALLET
+BITCOIN_QT_CPP += $(BITCOIN_QT_WALLET_CPP)
+endif
+
+RES_IMAGES = \
+  qt/res/images/about.png \
+  qt/res/images/splash.png \
+  qt/res/images/splash_testnet.png \
+  qt/res/images/splash_regtest.png \
+  qt/res/images/respubliqa_logo_horizontal.png \
+  qt/res/images/downArrow_dark.png \
+  qt/res/images/downArrow_small_dark.png \
+  qt/res/images/downArrow_small.png \
+  qt/res/images/upArrow_small_dark.png \
+  qt/res/images/upArrow_small.png \
+  qt/res/images/leftArrow_small_dark.png \
+  qt/res/images/rightArrow_small_dark.png \
+  qt/res/images/qtreeview_selected.png
+
+RES_CSS = \
+  qt/res/css/default.css \
+  qt/respubliqa/res/css/style_dark.css \
+  qt/respubliqa/res/css/style_light.css
+
+RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
+
+BITCOIN_RC = qt/res/respubliqa-qt-res.rc
+
+BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+  -I$(builddir)/qt/forms
+
+qt_libbitcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_libbitcoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libbitcoinqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_libbitcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES)
+
+nodist_qt_libbitcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+  $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
+
+# forms/foo.h -> forms/ui_foo.h
+QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
+
+# Most files will depend on the forms and moc files as includes. Generate them
+# before anything else.
+$(QT_MOC): $(QT_FORMS_H)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_respubliqa_qt_OBJECTS) : | $(QT_MOC)
+
+#Generating these with a half-written protobuf header leads to wacky results.
+#This makes sure it's done.
+$(QT_MOC): $(PROTOBUF_H)
+$(QT_MOC_CPP): $(PROTOBUF_H)
+
+# respubliqa-qt binary #
+qt_respubliqa_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS) $(SVG_CFLAGS) $(CHARTS_CFLAGS)
+qt_respubliqa_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+
+qt_respubliqa_qt_SOURCES = qt/respubliqa.cpp
+if TARGET_DARWIN
+  qt_respubliqa_qt_SOURCES += $(BITCOIN_MM)
+endif
+if TARGET_WINDOWS
+  qt_respubliqa_qt_SOURCES += $(BITCOIN_RC)
+endif
+qt_respubliqa_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+if ENABLE_WALLET
+qt_respubliqa_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+endif
+if ENABLE_ZMQ
+qt_respubliqa_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+endif
+qt_respubliqa_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+  $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(SVG_LIBS) $(CHARTS_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
+  $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+qt_respubliqa_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_respubliqa_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+
+#locale/foo.ts -> locale/foo.qm
+QT_QM=$(QT_TS:.ts=.qm)
+
+SECONDARY: $(QT_QM)
+
+$(srcdir)/qt/respubliqastrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
+	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
+
+translate: $(srcdir)/qt/respubliqastrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/respubliqa.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/respubliqa_en.ts
+
+$(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
+	@test -f $(RCC)
+	@cp -f $< $(@D)/temp_$(<F)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name respubliqa_locale $(@D)/temp_$(<F) | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+	@rm $(@D)/temp_$(<F)
+
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
+	@test -f $(RCC)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name respubliqa $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_respubliqa_locale.qrc
+
+CLEANFILES += $(CLEAN_QT)
+
+respubliqa_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_respubliqa_qt_OBJECTS) qt/respubliqa-qt$(EXEEXT) $(LIBBITCOINQT)
+
+respubliqa_qt : qt/respubliqa-qt$(EXEEXT)
+
+ui_%.h: %.ui
+	@test -f $(UIC)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(UIC) -o $@ $< || (echo "Error creating $@"; false)
+
+%.moc: %.cpp
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+moc_%.cpp: %.h
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(MOC) $(DEFAULT_INCLUDES) $(QT_INCLUDES) $(MOC_DEFS) $< | \
+	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
+
+%.qm: %.ts
+	@test -f $(LRELEASE)
+	@$(MKDIR_P) $(@D)
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@

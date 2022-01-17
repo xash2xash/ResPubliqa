@@ -1,0 +1,6 @@
+usr/local/bin/respubliqa-qt usr/bin
+share/pixmaps/respubliqa32.xpm usr/share/pixmaps
+share/pixmaps/respubliqa16.xpm usr/share/pixmaps
+share/pixmaps/respubliqa128.png usr/share/pixmaps
+debian/respubliqa-qt.desktop usr/share/applications
+debian/respubliqa-qt.protocol usr/share/kde4/services/
