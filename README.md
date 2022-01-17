@@ -4,8 +4,8 @@ ResPubliqa Core integration/staging repository
 ### Coin Specs
 
 • PoW Algorithm: Quark  
-• Premine: 210000 RSQ (1%)
-• PoW Blocks: 1 - 200
+• Premine: 210000 RSQ (1%) 
+• PoW Blocks: 1 - 200 
 • PoS Blocks: Starting from 501  
 • Block Time: 60 Seconds    
 • Maturity: 100 Confirmations 
