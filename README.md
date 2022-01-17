@@ -5,7 +5,7 @@ ResPubliqa Core integration/staging repository
 
 • PoW Algorithm: Quark  
 • Premine: 210000 RSQ (1%)          
-• PoW Blocks: 1 - 200         
+• PoW Blocks: 1 - 500         
 • PoS Blocks: Starting from 501           
 • Block Time: 60 Seconds    
 • Maturity: 100 Confirmations       
