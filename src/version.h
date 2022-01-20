@@ -31,7 +31,7 @@ static const int MIN_PEER_MNANNOUNCE = 89999;
 static const int CADDR_TIME_VERSION = 1000;
 
 //! BIP 0031, pong message, is enabled for all versions AFTER this one
-static const int BIP0031_VERSION = 90000;
+static const int BIP0031_VERSION = 80000;
 
 //! "mempool" command, enhanced "getdata" behavior starts with this version
 static const int MEMPOOL_GD_VERSION = 90000;

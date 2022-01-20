@@ -1,4 +1,4 @@
-Name "ResPubliqa Core (-bit)"
+Name "ResPubliqa Core (64-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -9,25 +9,25 @@ SetCompressor /SOLID lzma
 !define URL https://www.respubliqa.org
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/user/worked/22/ResPubliqa/share/pixmaps/respubliqa.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/user/worked/22/ResPubliqa/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/user/worked/ResPubliqa/share/pixmaps/respubliqa.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/user/worked/ResPubliqa/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/user/worked/22/ResPubliqa/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/user/worked/ResPubliqa/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "ResPubliqa Core"
-!define MUI_FINISHPAGE_RUN $INSTDIR\respubliqa-qt
+!define MUI_FINISHPAGE_RUN $INSTDIR\respubliqa-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/user/worked/22/ResPubliqa/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/user/worked/ResPubliqa/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
 !include Sections.nsh
 !include MUI2.nsh
-!if "" == "64"
+!if "64" == "64"
 !include x64.nsh
 !endif
 
@@ -47,8 +47,8 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/user/worked/22/ResPubliqa/respubliqa-0.9.0-win-setup.exe
-!if "" == "64"
+OutFile /home/user/worked/ResPubliqa/respubliqa-0.9.0-win64-setup.exe
+!if "64" == "64"
 InstallDir $PROGRAMFILES64\ResPubliqa
 !else
 InstallDir $PROGRAMFILES\ResPubliqa
@@ -72,14 +72,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/user/worked/22/ResPubliqa/release/respubliqa-qt
-    File /oname=COPYING.txt /home/user/worked/22/ResPubliqa/COPYING
-    File /oname=readme.txt /home/user/worked/22/ResPubliqa/doc/README_windows.txt
+    File /home/user/worked/ResPubliqa/release/respubliqa-qt.exe
+    File /oname=COPYING.txt /home/user/worked/ResPubliqa/COPYING
+    File /oname=readme.txt /home/user/worked/ResPubliqa/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/user/worked/22/ResPubliqa/release/respubliqad
-    File /home/user/worked/22/ResPubliqa/release/respubliqa-cli
+    File /home/user/worked/ResPubliqa/release/respubliqad.exe
+    File /home/user/worked/ResPubliqa/release/respubliqa-cli.exe
     SetOutPath $INSTDIR\doc
-    File /r /home/user/worked/22/ResPubliqa/doc\*.*
+    File /r /home/user/worked/ResPubliqa/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -90,8 +90,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\respubliqa-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\ResPubliqa Core (testnet, -bit).lnk" "$INSTDIR\respubliqa-qt" "-testnet" "$INSTDIR\respubliqa-qt" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\respubliqa-qt.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\ResPubliqa Core (testnet, 64-bit).lnk" "$INSTDIR\respubliqa-qt.exe" "-testnet" "$INSTDIR\respubliqa-qt.exe" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -104,8 +104,8 @@ Section -post SEC0001
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
     WriteRegStr HKCR "respubliqa" "URL Protocol" ""
     WriteRegStr HKCR "respubliqa" "" "URL:ResPubliqa"
-    WriteRegStr HKCR "respubliqa\DefaultIcon" "" $INSTDIR\respubliqa-qt
-    WriteRegStr HKCR "respubliqa\shell\open\command" "" '"$INSTDIR\respubliqa-qt" "%1"'
+    WriteRegStr HKCR "respubliqa\DefaultIcon" "" $INSTDIR\respubliqa-qt.exe
+    WriteRegStr HKCR "respubliqa\shell\open\command" "" '"$INSTDIR\respubliqa-qt.exe" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -123,7 +123,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\respubliqa-qt
+    Delete /REBOOTOK $INSTDIR\respubliqa-qt.exe
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -135,7 +135,7 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\ResPubliqa Core (testnet, -bit).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\ResPubliqa Core (testnet, 64-bit).lnk"
     Delete /REBOOTOK "$SMSTARTUP\ResPubliqa.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
@@ -157,7 +157,7 @@ SectionEnd
 # Installer functions
 Function .onInit
     InitPluginsDir
-!if "" == "64"
+!if "64" == "64"
     ${If} ${RunningX64}
       ; disable registry redirection (enable access to 64-bit portion of registry)
       SetRegView 64
