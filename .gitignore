@@ -16,6 +16,7 @@ src/qt/test/test_respubliqa-qt
 depends/x86_64-w64-mingw32/
 depends/i686-w64-mingw32/
 depends/sources/
+autom4te.cache/
 
 # autoreconf
 Makefile.in
