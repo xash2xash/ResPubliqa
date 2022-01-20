@@ -13,7 +13,8 @@ src/respubliqa-wallet
 src/test/fuzz/fuzz
 src/test/test_respubliqa
 src/qt/test/test_respubliqa-qt
-depends/x86_64-w64-mingw32/include/*
+depends/x86_64-w64-mingw32/*
+depends/i686-w64-mingw32/*
 
 # autoreconf
 Makefile.in
