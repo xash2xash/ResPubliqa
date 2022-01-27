@@ -2002,12 +2002,38 @@ int64_t GetBlockValue(int nHeight)
         if (nHeight < 200 && nHeight > 0)
             return 250000 * COIN;
     }
+    
+// magnus ab integro saeclorum nascitur ordo.
+// iam redit et Virgo, redeunt Saturnia regna;
+// iam nova progenies caelo demittitur alto.
+// tu modo nascenti puero, quo ferrea primum
+// desinet ac toto surget gens aurea mundo
 
+    // ᚱb - ((if) ᛑp%) = newᚱb
+    
     int64_t nSubsidy = 0;
-    if (nHeight > 2000)		return 0.1 * COIN;
-    if (nHeight > 1)		return 0.1 * COIN;
+// Magiq is here
+
+//    if (nHeight > 202908) return 0.86117548 * COIN; // Mount 7
+// Cycle 2 started - changing the minimum price RSQ = 0.2USD
+
+// Cycle 1 Completed
+//    if (nHeight > 165705)	return 0.78288680 * COIN; // Mount 6
+
+//    if (nHeight > 131885)	return 0.71171527 * COIN; // Mount 5
+
+//    if (nHeight > 101138)	return 0.64701388 * COIN; // Mount 4
+    
+//    if (nHeight > 73187)	return 0.58819444 * COIN; // Mount 3
+
+//    if (nHeight > 47777)	return 0.53472222 * COIN; // Mount 2
+
+    if (nHeight > 5000)		return 0.48611111 * COIN; // Mount 1
+   
+    if (nHeight > 1)		return 0.1 * COIN; // Mount 1
+// Cycle 1 started
     if (nHeight !=1)		return 1 * COIN;
-    // Premine
+    // Premine for presale
     return 210000 * COIN; // Premine 1% from Maximum Supply
 
     // Check if we reached the coin max supply.
