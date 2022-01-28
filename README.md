@@ -12,5 +12,5 @@ ResPubliqa Core integration/staging repository
 • Total Coin Supply: 21000000           
 • Prefix: RSQ adresses start with the letter "W"                 
 • Ports: 7429 (p2p) / 7430 (rpc)        
-• MN Payments: 60%              
-* POS Reward: 40%                      
+• MN Payments: 60%        
+• PoS Reward: 40%                 
