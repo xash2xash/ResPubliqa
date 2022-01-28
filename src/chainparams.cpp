@@ -73,11 +73,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000002b4d21b1ed5d14e02be2c8f6d846bc71e283beba27b66c1ac10b8a4b6d5"));  //launch
+    (0, uint256("0x00000482978fcc1a0c64c47a91cc56b057c7ccb45fddcfe9bf86fdafd9c90a7e"));  //launch combat network
     
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1642064400, // * UNIX timestamp of last checkpoint block
+    1643332867, // * UNIX timestamp of last checkpoint block
     0,          // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     250        // * estimated number of transactions per day after checkpoint
@@ -235,51 +235,29 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "Genesis block created - 天官赐福";
+        const char* pszTimestamp = "Annuit Cœptis";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 1 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04b6d90e20975a9ad2d35f03a17efc4ae6fa2f0de4cc9725cd4d653cab3299f9ea7dca058fe6e55c72f7d364e8a2eea91d98e1cb24563056a401f10e5bfe3bb501") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
         genesis.nVersion = 1;
-        genesis.nTime = 1642064400;
+        genesis.nTime = 1643332867;
         genesis.nBits = 0x1e0fffff;
-        genesis.nNonce = 22474390;
-
-/**		hashGenesisBlock = uint256("0x01");
-		if (true && genesis.GetHash() != hashGenesisBlock)
-        {
-           printf("recalculating params for mainnet.\n");
-            std::string old_nonce;
-            std::stringstream oldss;
-            oldss << genesis.nNonce;
-            old_nonce = oldss.str();
-            printf("old mainnet genesis nonce: %s\n", old_nonce.c_str());
-            printf("old mainnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
-            // deliberately empty for loop finds nonce value.
-            for(genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++){ } 
-            printf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            std::string new_nonce;
-            std::stringstream newss;
-            newss << genesis.nNonce;
-            new_nonce = newss.str();
-            printf("new mainnet genesis nonce: %s\n", new_nonce.c_str());
-            printf("new mainnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
-        }
-*/
+        genesis.nNonce = 3580427;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000002b4d21b1ed5d14e02be2c8f6d846bc71e283beba27b66c1ac10b8a4b6d5"));
-        assert(genesis.hashMerkleRoot == uint256("0x6e4341d44047bf556d6561bcf7571841ba4c5d216e5305ce2a67fd55dfb99081"));
+        assert(hashGenesisBlock == uint256("0x00000482978fcc1a0c64c47a91cc56b057c7ccb45fddcfe9bf86fdafd9c90a7e"));
+        assert(genesis.hashMerkleRoot == uint256("0xb6c8ac386aac4390fda60b5d1d02eea22511ca5c59cbc95627ace1b8b834cd54"));
 
 		vFixedSeeds.clear();
 		vSeeds.clear();
 
-        vSeeds.push_back(CDNSSeedData("172.17.1.67", "172.17.1.67"));
+        vSeeds.push_back(CDNSSeedData("172.17.1.50", "172.17.1.50"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 73);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 125);
@@ -304,8 +282,8 @@ public:
         nPoolMaxTransactions = 3;
         nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
         strSporkPubKey = "043c32b932f9377634d6431615db5bb1e07027e43e8d819ce999345d2e23010b537a02e2ede63a667985d9a7b31133b2cfca5b8889addda0b810207c6333b58dc6";
-        strObfuscationPoolDummyAddress = "";
-        nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
+        strObfuscationPoolDummyAddress = "WaETAExaX1Z38JScyeyVQC78D3pziCYvDy";
+        nStartMasternodePayments = 1643461200; //Wed, 25 Jun 2014 20:36:16 GMT
 
         /** Zerocoin */
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"

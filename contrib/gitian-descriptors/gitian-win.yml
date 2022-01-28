@@ -24,7 +24,7 @@ packages:
 - "python3"
 - "rename"
 remotes:
-- "url": "https://github.com/respubliqa-altc/respubliqa.git"
+- "url": "https://github.com/ResPubliqa/respubliqa.git"
   "dir": "respubliqa"
 files: []
 script: |

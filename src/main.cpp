@@ -2028,10 +2028,9 @@ int64_t GetBlockValue(int nHeight)
 
 //    if (nHeight > 47777)	return 0.53472222 * COIN; // Mount 2
 
-    if (nHeight > 5000)		return 0.48611111 * COIN; // Mount 1
-   
-    if (nHeight > 1)		return 0.1 * COIN; // Mount 1
-// Cycle 1 started
+    if (nHeight > 10080)		return 0.48611111 * COIN; // Mount 1 - Mining starts a week after the start of the pre-sale 10%
+// Cycle 1 started 
+    if (nHeight > 1)		return 0.001 * COIN; // Presale launch
     if (nHeight !=1)		return 1 * COIN;
     // Premine for presale
     return 210000 * COIN; // Premine 1% from Maximum Supply
@@ -2050,7 +2049,7 @@ int64_t GetBlockValue(int nHeight)
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZRSQStake)
 {
-    return GetBlockValue(nHeight) * 0.80;
+    return GetBlockValue(nHeight) * 0.60;
 }
 
 bool IsInitialBlockDownload()

@@ -26,7 +26,7 @@ Drag ResPubliqa-Qt to your applications folder, and then run ResPubliqa-Qt.
 
 ### Need Help?
 
-* See the documentation at the [ResPubliqa Wiki](https://github.com/respubliqa-altc/respubliqa/wiki)
+* See the documentation at the [ResPubliqa Wiki](https://github.com/ResPubliqa/respubliqa/wiki)
 for help and more information.
 * Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [ResPubliqa Forum](http://forum.respubliqa.org/).
 * Join our Discord server [Discord Server](https://discord.respubliqa.org)

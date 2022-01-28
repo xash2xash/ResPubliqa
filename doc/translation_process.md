@@ -8,7 +8,7 @@ Transifex is setup to monitor the GitHub repo for updates, and when code contain
 
 Multiple language support is critical in assisting ResPubliqa's global adoption, and growth. One of ResPubliqa's greatest strengths is cross-border money transfers, any help making that easier is greatly appreciated.
 
-See the [Transifex ResPubliqa project](https://www.transifex.com/respubliqa-altc/respubliqa-altc-translations/) to assist in translations.
+See the [Transifex ResPubliqa project](https://www.transifex.com/ResPubliqa/ResPubliqa-translations/) to assist in translations.
 
 ### Writing code with translations
 We use automated scripts to help extract translations in both Qt, and non-Qt source files. It is rarely necessary to manually edit the files in `src/qt/locale/`. The translation source files must adhere to the following format:
@@ -43,7 +43,7 @@ git commit
 ### Creating a Transifex account
 Visit the [Transifex Signup](https://www.transifex.com/signup/) page to create an account. Take note of your username and password, as they will be required to configure the command-line tool.
 
-You can find the ResPubliqa translation project at [https://www.transifex.com/respubliqa-altc/respubliqa-altc-translations/](https://www.transifex.com/respubliqa-altc/respubliqa-altc-translations/).
+You can find the ResPubliqa translation project at [https://www.transifex.com/ResPubliqa/ResPubliqa-translations/](https://www.transifex.com/ResPubliqa/ResPubliqa-translations/).
 
 ### Installing the Transifex client command-line tool
 The client is used to fetch updated translations. If you are having problems, or need more details, see [https://docs.transifex.com/client/installing-the-client](https://docs.transifex.com/client/installing-the-client)

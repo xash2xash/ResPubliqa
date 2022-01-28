@@ -8,7 +8,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/respubliqa-altc/respubliqa-detached-sigs.git"
+- "url": "https://github.com/ResPubliqa/respubliqa-detached-sigs.git"
   "dir": "signature"
 files:
 - "respubliqa-osx-unsigned.tar.gz"

@@ -112,7 +112,7 @@ gpg --output ${VERSION}-win-unsigned/$NAME/respubliqa-win-${VERSION%\.*}-build.a
 Uploading Signatures
 --------------------
 Make a Pull Request (both the `.assert` and `.assert.sig` files) to the
-[gitian.sigs](https://github.com/respubliqa-altc/gitian.sigs/) repository:
+[gitian.sigs](https://github.com/ResPubliqa/gitian.sigs/) repository:
 
 ```bash
 git checkout -b ${VERSION}-not-codesigned

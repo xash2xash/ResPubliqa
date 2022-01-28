@@ -178,7 +178,7 @@
     </message>
     <message>
         <source>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</source>
-        <translation>DN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
+        <translation>WN6i46dytMPVhV1JMGZFuQBh7BZZ6nNLox</translation>
     </message>
 </context>
 <context>
@@ -5132,6 +5132,50 @@ Are you sure?
     <message>
         <source>Staking not active</source>
         <translation>Стекинг не активен</translation>
+    </message>
+  <message>
+        <source>Staking Disabled</source>
+        <translation>Стекинг отключен</translation>
+    </message>
+    <message>
+        <source>Cold Staking Disabled</source>
+        <translation>Холодный стекинг отключен</translation>
+    </message>
+    <message>
+        <source> %54 Synchronizing..</source>
+        <translation>Синхронизировано %54.. </translation>
+    </message>
+    <message>
+        <source>Light Theme</source>
+        <translation>Дневной режим</translation>
+    </message>
+    <message>
+        <source>Dark Theme</source>
+        <translation>Ночной режим</translation>
+    </message>
+    <message>
+        <source>Wallet Locked </source>
+        <translation>Кошелек заблокирован</translation>
+    </message>
+    <message>
+        <source>Wallet Locked</source>
+        <translation>Кошелек заблокирован</translation>
+    </message>
+    <message>
+        <source>Wallet Unlocked</source>
+        <translation>Кошелек разблокирован</translation>
+    </message>
+    <message>
+        <source>Wallet Unencrypted</source>
+        <translation>Кошелек не зашифрован</translation>
+    </message>
+    <message>
+        <source>Available (Locked included)</source>
+        <translation>Доступно (включая заблокированное)</translation>
+    </message>
+    <message>
+        <source>Synchronizing masternodes data... - Block: %d</source>
+        <translation>Синхронизировация мастернод... - Блок: %d</translation>
     </message>
     <message>
         <source>Synchronized</source>

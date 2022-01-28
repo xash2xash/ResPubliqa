@@ -33,7 +33,7 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/respubliqa-altc/respubliqa.git"
+- "url": "https://github.com/ResPubliqa/respubliqa.git"
   "dir": "respubliqa"
 files: []
 script: |

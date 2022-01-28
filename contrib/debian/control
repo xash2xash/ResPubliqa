@@ -29,8 +29,8 @@ Build-Depends: debhelper,
  dh-systemd
 Standards-Version: 3.9.2
 Homepage: http://www.respubliqa.cc
-Vcs-Git: git://github.com/respubliqa-altc/respubliqa.git
-Vcs-Browser: https://github.com/respubliqa-altc/respubliqa
+Vcs-Git: git://github.com/ResPubliqa/respubliqa.git
+Vcs-Browser: https://github.com/ResPubliqa/respubliqa
 
 Package: respubliqad
 Architecture: any

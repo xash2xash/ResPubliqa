@@ -24,18 +24,18 @@ URL:		https://respubliqa.org/
 Source0:	https://respubliqa.org/bin/respubliqa-core-%{version}/respubliqa-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/respubliqa-altc/respubliqa/v%{version}/contrib/debian/examples/respubliqa.conf
+Source10:	https://raw.githubusercontent.com/ResPubliqa/respubliqa/v%{version}/contrib/debian/examples/respubliqa.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/respubliqa-altc/respubliqa/v%{version}/doc/man/respubliqad.1
-Source21:	https://raw.githubusercontent.com/respubliqa-altc/respubliqa/v%{version}/doc/man/respubliqa-cli.1
-Source22:	https://raw.githubusercontent.com/respubliqa-altc/respubliqa/v%{version}/doc/man/respubliqa-qt.1
+Source20:	https://raw.githubusercontent.com/ResPubliqa/respubliqa/v%{version}/doc/man/respubliqad.1
+Source21:	https://raw.githubusercontent.com/ResPubliqa/respubliqa/v%{version}/doc/man/respubliqa-cli.1
+Source22:	https://raw.githubusercontent.com/ResPubliqa/respubliqa/v%{version}/doc/man/respubliqa-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/respubliqa-altc/respubliqa/v%{version}/contrib/rpm/respubliqa.te
+Source30:	https://raw.githubusercontent.com/ResPubliqa/respubliqa/v%{version}/contrib/rpm/respubliqa.te
 # Source31 - what about respubliqa-tx and bench_respubliqa ???
-Source31:	https://raw.githubusercontent.com/respubliqa-altc/respubliqa/v%{version}/contrib/rpm/respubliqa.fc
-Source32:	https://raw.githubusercontent.com/respubliqa-altc/respubliqa/v%{version}/contrib/rpm/respubliqa.if
+Source31:	https://raw.githubusercontent.com/ResPubliqa/respubliqa/v%{version}/contrib/rpm/respubliqa.fc
+Source32:	https://raw.githubusercontent.com/ResPubliqa/respubliqa/v%{version}/contrib/rpm/respubliqa.if
 
 Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg
 

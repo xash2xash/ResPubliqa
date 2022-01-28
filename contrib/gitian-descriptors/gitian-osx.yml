@@ -29,7 +29,7 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/respubliqa-altc/respubliqa.git"
+- "url": "https://github.com/ResPubliqa/respubliqa.git"
   "dir": "respubliqa"
 files:
 - "MacOSX10.11.sdk.tar.gz"

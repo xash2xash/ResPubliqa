@@ -1,8 +1,8 @@
-ResPubliqa Core version *v4.0.2* is now available from:  <https://github.com/respubliqa-altc/respubliqa/releases>
+ResPubliqa Core version *v4.0.2* is now available from:  <https://github.com/ResPubliqa/respubliqa/releases>
 
 This is a new revision version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/respubliqa-altc/respubliqa/issues>
+Please report bugs using the issue tracker at github: <https://github.com/ResPubliqa/respubliqa/issues>
 
 
 Recommended Update
@@ -91,4 +91,4 @@ Thanks to everyone who directly contributed to this release:
 - furszy
 - random-zebra
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/respubliqa-altc-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/ResPubliqa-translations/), the QA team during Testing and the Node hosts supporting our Testnet.

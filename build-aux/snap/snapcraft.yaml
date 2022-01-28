@@ -68,7 +68,7 @@ apps:
     plugs: [home]
 parts:
   respubliqa-core:
-    source: https://github.com/respubliqa-altc/respubliqa
+    source: https://github.com/ResPubliqa/respubliqa
     source-type: git
     source-tag: master
     plugin: nil
