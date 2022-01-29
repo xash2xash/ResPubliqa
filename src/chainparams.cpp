@@ -182,7 +182,7 @@ public:
         nTimeSlotLength = 15;                           // 15 seconds
         nTargetTimespan_V2 = 2 * nTimeSlotLength * 60;  // 30 minutes
         nMaturity = 100;
-        nStakeMinAge = 60 * 60;                         // 1 hour
+        nStakeMinAge = 4 * 3600;                         // 4 hour
         nStakeMinDepth = 100;
         nFutureTimeDriftPoW = 7200;
         nFutureTimeDriftPoS = 180;
@@ -271,7 +271,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = false;
+        fMiningRequiresPeers = true;
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
