@@ -20,5 +20,7 @@ Blockchain explorer - http://explorer.respubliqa.space
 ### Community
 
 Welcome to our Discord server - https://discord.gg/4BhnHSHu 
+
 Telegram channel - https://t.me/ResPubliqa  
+
 Telegram chat - https://t.me/ResPubliqa_chat  
