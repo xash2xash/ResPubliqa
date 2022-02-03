@@ -11,6 +11,6 @@ ResPubliqa Core integration/staging repository
 • Maturity: 100 Confirmations       
 • Total Coin Supply: 21000000           
 • Prefix: RSQ adresses start with the letter "W"                 
-• Ports: 7429 (p2p) / 7430 (rpc)        
+• Ports: 9099 (p2p) / 9100 (rpc)        
 • MN Payments: 60%        
 • PoS Reward: 40%                 
