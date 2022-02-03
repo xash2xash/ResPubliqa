@@ -15,10 +15,10 @@ ResPubliqa Core integration/staging repository
 • MN Payments: 60%        
 • PoS Reward: 40%
 
-Blockchain explorer - http://explorer.respubliqa.space
+Blockchain explorer - http://explorer.respubliqa.space  
 
 ### Community
 
-Welcome to our Discord server - https://discord.gg/4BhnHSHu
-Telegram channel - https://t.me/ResPubliqa
-Telegram chat - https://t.me/ResPubliqa_chat
+Welcome to our Discord server - https://discord.gg/4BhnHSHu 
+Telegram channel - https://t.me/ResPubliqa  
+Telegram chat - https://t.me/ResPubliqa_chat  
