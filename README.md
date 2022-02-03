@@ -13,4 +13,12 @@ ResPubliqa Core integration/staging repository
 • Prefix: RSQ adresses start with the letter "W"                 
 • Ports: 9099 (p2p) / 9100 (rpc)        
 • MN Payments: 60%        
-• PoS Reward: 40%                 
+• PoS Reward: 40%
+
+Blockchain explorer - http://explorer.respubliqa.space
+
+### Community
+
+Welcome to our Discord server - https://discord.gg/4BhnHSHu
+Telegram channel - https://t.me/ResPubliqa
+Telegram chat - https://t.me/ResPubliqa_chat
