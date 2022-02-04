@@ -262,8 +262,9 @@ public:
 		vFixedSeeds.clear();
 		vSeeds.clear();
 //seed nodes
-        vSeeds.push_back(CDNSSeedData("rnode0.respubliqa.space", "rnode0.respubliqa.space"));
-        vSeeds.push_back(CDNSSeedData("rnode1.respubliqa.space", "rnode1.respubliqa.space"));
+        vSeeds.push_back(CDNSSeedData("respubliqa.space", "rnode0.respubliqa.space"));
+        vSeeds.push_back(CDNSSeedData("respubliqa.space", "rnode1.respubliqa.space"));
+        vSeeds.push_back(CDNSSeedData("respubliqa.space", "rnode1.respubliqa.space"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 73);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 125);
@@ -288,7 +289,7 @@ public:
         nPoolMaxTransactions = 3;
         nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
         strSporkPubKey = "043c32b932f9377634d6431615db5bb1e07027e43e8d819ce999345d2e23010b537a02e2ede63a667985d9a7b31133b2cfca5b8889addda0b810207c6333b58dc6";
-        strObfuscationPoolDummyAddress = "WNoK5oAG44NHaLVr5PuB3ZbmuxVC7Fo8ut";
+        strObfuscationPoolDummyAddress = "WQogeUgEYKjGHkZrzuCeddb1k7LqbXmDCH";
         nStartMasternodePayments = 1643461200; //Wed, 25 Jun 2014 20:36:16 GMT
 
         /** Zerocoin */
@@ -411,7 +412,7 @@ public:
         nBudgetCycleBlocks = 144; //!< Ten cycles per day on testnet
         strSporkPubKey = "04132dbb939ec44e342f09436918a91e70de97b109959172d55c6642931f87e43e16cd53968271e391bad5c5974d24d5600e3dbb163df968ba36c27a3bb84df0ac";
         strSporkPubKeyOld = "04348C2F50F90267E64FACC65BFDC9D0EB147D090872FB97ABAE92E9A36E6CA60983E28E741F8E7277B11A7479B626AC115BA31463AC48178A5075C5A9319D4A38";
-        strObfuscationPoolDummyAddress = "aaETNExaX6Z48JScyeyVQC98D3pziCYvFy";
+        strObfuscationPoolDummyAddress = "Wd3pp15XFwPYBMPutAhBUMxnWHuQBmD7Sf";
         nStartMasternodePayments = 1420837558; //Fri, 09 Jan 2015 21:05:58 GMT
         nBudget_Fee_Confirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                        // here because we only have a 8 block finalization window on testnet

@@ -47,7 +47,7 @@ bool CMasternodeConfig::read(std::string& strErr)
                                                                              "# Step 3 - get privatekey: dumpprivkey\n"
  										"# Step 4 - Fund the masternode address: Send 200 coins to your masternode addres *from step2 \n"
   										"# Step 5 - Check your masternode transaction hash: masternode outputs \n"                                                                                                                                                 
-                                    						"# Example: mn1 127.0.0.2:9090 79HaYBVUCYjEMeeH1Y4dBGLALQZE2Yc1K64xiqgX37tGBDQL8Xg 8bcd3c14c81f87eaa86e4e36834c92927a07f9e18718810b92e0d0324456a67c 0"
+                                    						"# Example: mn1 127.0.0.2:9099 79HaYBVUCYjEMeeH1Y4dBGLALQZE2Yc1K64xiqgX37tGBDQL8Xg 8bcd3c14c81f87eaa86e4e36834c92927a07f9e18718810b92e0d0324456a67c 0"
                                     "#\n";
             fwrite(strHeader.c_str(), std::strlen(strHeader.c_str()), 1, configFile);
             fclose(configFile);
@@ -89,17 +89,17 @@ bool CMasternodeConfig::read(std::string& strErr)
         }
 
         if (Params().NetworkID() == CBaseChainParams::MAIN) {
-            if (port != 9090) {
+            if (port != 9099) {
                 strErr = _("Invalid port detected in masternode.conf") + "\n" +
                          strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
-                         _("(must be 9090 for mainnet)");
+                         _("(must be 9099 for mainnet)");
                 streamConfig.close();
                 return false;
             }
-        } else if (port == 9090) {
+        } else if (port == 9099) {
             strErr = _("Invalid port detected in masternode.conf") + "\n" +
                      strprintf(_("Line: %d"), linenumber) + "\n\"" + line + "\"" + "\n" +
-                     _("(9090 could be used only on mainnet)");
+                     _("(9099 could be used only on mainnet)");
             streamConfig.close();
             return false;
         }

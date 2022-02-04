@@ -21,7 +21,7 @@
 #define CLIENT_VERSION_MINOR 9
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 2
+#define CLIENT_VERSION_REVISION 3
 
 /* Version is release */
 #define COPYRIGHT_YEAR 2022
@@ -352,7 +352,7 @@
 #define PACKAGE_NAME "ResPubliqa Core"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "ResPubliqa Core 0.9.2"
+#define PACKAGE_STRING "ResPubliqa Core 0.9.3"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "respubliqa"
@@ -361,7 +361,7 @@
 #define PACKAGE_URL "https://respubliqa.org/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.9.2"
+#define PACKAGE_VERSION "0.9.3"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
