@@ -2018,17 +2018,17 @@ int64_t GetBlockValue(int nHeight)
 // Cycle 2 started - changing the minimum price RSQ = 0.2USD
 
 // Cycle 1 Completed
-//    if (nHeight > 165705)	return 0.78288680 * COIN; // Mount 6
+//    if (nHeight > 165705)	return 0.78288680 * COIN; // Mounth 6
 
-//    if (nHeight > 131885)	return 0.71171527 * COIN; // Mount 5
+//    if (nHeight > 131885)	return 0.71171527 * COIN; // Mounth 5
 
-//    if (nHeight > 101138)	return 0.64701388 * COIN; // Mount 4
-    
-//    if (nHeight > 73187)	return 0.58819444 * COIN; // Mount 3
+//    if (nHeight > 101138)	return 0.64701388 * COIN; // Mounth 4
 
-//    if (nHeight > 47777)	return 0.53472222 * COIN; // Mount 2
+//    if (nHeight > 73187)	return 0.58819444 * COIN; // Mounth 3
 
-    if (nHeight > 10080)		return 0.48611111 * COIN; // Mount 1 - Mining starts a week after the start of the pre-sale 10%
+//    if (nHeight > 47777)	return 0.53472222 * COIN; // Mounth 2
+
+//    if (nHeight > 30240)		return 0.48611111 * COIN; // 3 weeks after the opening of the presale
 // Cycle 1 started 
     if (nHeight > 1)		return 0.001 * COIN; // Presale launch
     if (nHeight !=1)		return 1 * COIN;
