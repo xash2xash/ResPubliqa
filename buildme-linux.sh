@@ -1,3 +1,3 @@
 ./autogen.sh
 ./configure
-make
+make -j5
