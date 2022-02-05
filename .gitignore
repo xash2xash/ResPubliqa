@@ -2,6 +2,8 @@
 
 *.exe
 *.pdb
+release-win64/
+release-linux/
 src/respubliqa
 src/respubliqad
 src/respubliqa-cli

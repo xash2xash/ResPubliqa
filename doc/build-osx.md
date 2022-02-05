@@ -26,7 +26,7 @@ If you want to build the disk image with `make deploy` (.dmg / optional), you ne
 
 Berkeley DB
 -----------
-It is recommended to use Berkeley DB 4.8. If you have to build it yourself,
+It is recommended to use Berkeley DB 5.3. If you have to build it yourself,
 you can use [the installation script included in contrib/](/contrib/install_db4.sh)
 like so:
 
@@ -74,7 +74,7 @@ disable-wallet mode with:
 
     ./configure --disable-wallet
 
-In this case there is no dependency on Berkeley DB 4.8.
+In this case there is no dependency on Berkeley DB 5.3.
 
 Running
 -------
