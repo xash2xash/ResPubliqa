@@ -253,10 +253,10 @@ QT_TRANSLATE_NOOP("respubliqa-core", ""
 QT_TRANSLATE_NOOP("respubliqa-core", ""
 "You must specify a masternodeprivkey in the configuration. Please see "
 "documentation for help."),
-QT_TRANSLATE_NOOP("respubliqa-core", "(9090 could be used only on mainnet)"),
+QT_TRANSLATE_NOOP("respubliqa-core", "(9099 could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("respubliqa-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("respubliqa-core", "(default: 1)"),
-QT_TRANSLATE_NOOP("respubliqa-core", "(must be 9090 for mainnet)"),
+QT_TRANSLATE_NOOP("respubliqa-core", "(must be 9099 for mainnet)"),
 QT_TRANSLATE_NOOP("respubliqa-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("respubliqa-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("respubliqa-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
