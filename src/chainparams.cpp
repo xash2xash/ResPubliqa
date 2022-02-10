@@ -288,9 +288,9 @@ public:
 
         nPoolMaxTransactions = 3;
         nBudgetCycleBlocks = 43200; //!< Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
-        strSporkPubKey = "043c32b932f9377634d6431615db5bb1e07027e43e8d819ce999345d2e23010b537a02e2ede63a667985d9a7b31133b2cfca5b8889addda0b810207c6333b58dc6";
-        strObfuscationPoolDummyAddress = "WQogeUgEYKjGHkZrzuCeddb1k7LqbXmDCH";
-        nStartMasternodePayments = 1643461200; //Wed, 25 Jun 2014 20:36:16 GMT
+        strSporkPubKey = "045f3406b8fe888bae7fa8c2d808f57040b0e44ce394d838db8d5b0210ade4d4099b3704b8d37649608cf750190777b71b08de1cd8fef8aa763050a61fd4bbc113";
+        strObfuscationPoolDummyAddress = "WR9FTh1H9jBK7hfHeRASPLd5vv5xHMuu3n";
+        nStartMasternodePayments = 1643332867; //Fri Jan 28 2022 01:21:07 GMT+0000
 
         /** Zerocoin */
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"

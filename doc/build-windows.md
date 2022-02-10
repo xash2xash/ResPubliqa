@@ -82,7 +82,7 @@ The first step is to install the mingw-w64 cross-compilation tool chain:
 
     sudo apt install g++-mingw-w64-x86-64
 
-Ubuntu Bionic 18.04 <sup>[1](#footnote1)</sup>:
+Ubuntu Bionic 20.04 <sup>[1](#footnote1)</sup>:
 
     sudo update-alternatives --config x86_64-w64-mingw32-g++ # Set the default mingw32 g++ compiler option to posix.
 
@@ -101,6 +101,8 @@ Build using:
     ./autogen.sh # not required when building from tarball
     CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
     make
+    
+    Or just run the script buildme-w64.sh - ./buildme-w64.sh
 
 ## Building for 32-bit Windows
 
@@ -108,7 +110,7 @@ To build executables for Windows 32-bit, install the following dependencies:
 
     sudo apt install g++-mingw-w64-i686 mingw-w64-i686-dev
 
-Ubuntu Bionic 18.04 <sup>[1](#footnote1)</sup>:
+Ubuntu Bionic 20.04 <sup>[1](#footnote1)</sup>:
 
     sudo update-alternatives --config i686-w64-mingw32-g++  # Set the default mingw32 g++ compiler option to posix.
 
