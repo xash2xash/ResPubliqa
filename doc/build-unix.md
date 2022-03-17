@@ -72,7 +72,7 @@ Build requirements:
 
 Now, you can either build from self-compiled [depends](/depends/README.md) or install the required dependencies:
 
-    sudo apt-get install libssl-dev libgmp-dev libevent-dev libboost-all-dev
+    sudo apt-get install libssl-dev libgmp-dev libevent-dev libboost-all-dev libdb-dev libdb++-dev
 
 **Note:** For Ubuntu versions starting with Bionic (18.04), or Debian versions starting with Stretch, use `libssl1.0-dev`
 above instead of `libssl-dev`. ResPubliqa does not support the use of OpenSSL 1.1, though compilation is still possible
