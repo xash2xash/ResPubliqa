@@ -26,10 +26,10 @@ Drag ResPubliqa-Qt to your applications folder, and then run ResPubliqa-Qt.
 
 ### Need Help?
 
-* See the documentation at the [ResPubliqa Wiki](https://github.com/ResPubliqa/respubliqa/wiki)
+* See the documentation at the [ResPubliqa Wiki](https://github.com/xash2xash/ResPubliqa/wiki)
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [ResPubliqa Forum](http://forum.respubliqa.org/).
-* Join our Discord server [Discord Server](https://discord.respubliqa.org)
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [ResPubliqa Telegram](https://t.me/ResPubliqa_chat).
+* Join our Discord server [Discord Server](https://discord.gg/7AWCurqn23)
 
 Building
 ---------------------
@@ -56,8 +56,8 @@ The ResPubliqa repo's [root README](/README.md) contains relevant information on
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [ResPubliqa](http://forum.respubliqa.org/) forum.
-* Join the [ResPubliqa Discord](https://discord.respubliqa.org).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [ResPubliqa Telegram](https://t.me/ResPubliqa_chat) forum.
+* Join the [ResPubliqa Discord](https://discord.gg/7AWCurqn23).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
